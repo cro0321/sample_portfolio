@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{ font-family: 'SUITE-Regular';}
+
+.dark body,
+.dark .nav
+{background: #030507;
+    animation: infinite 9s background alternate-reverse;
+    color: #ebf4f1;
+    
+}
+.list li::after{
+    content: "";
+    position: absolute; width: 100%; height: 1px; background: #000; bottom: 0; left: 0; transition: 1s; transform: scaleX(0);
+}
+
+.dark .list li::after{background-color: #ebf4f1;}
+.list li.on::after,
+.list li:hover::after{transform: scaleX(1);}
+.list li.on,
+.list li:hover{font-weight: bold;}
+
+.m-btn.on > div:nth-child(1){transform: rotate(45deg) translateY(14px);}
+.m-btn.on > div:nth-child(2){transform: translateX(-30px); opacity: 0;}
+.m-btn.on > div:nth-child(3){transform: rotate(-45deg) translateY(-14px);}
+
+/* 인접하는 형제 +  */
+.m-btn.on + div{right: 0;}
+
+
+@keyframes background{
+    0%{background-color:  #091a28;}
+     /* 0%{background-color:  palegreen;} */
+     50%{background-color:  #08131b;}
+     /* 50%{background-color:  paleturquoise;} */
+     100%{background-color:  #030507;}
+     /* 100%{background-color: palevioletred;} */
+}
+
