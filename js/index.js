@@ -44,7 +44,7 @@ const $lang = localStorage.getItem("lang");
 localStorage.setItem("lang", lang);
 // const chkLang = localStorage.getItem("lang");
 // console.log("chkLang")
-axios.get("gdata/data.json")
+axios.get("data/data.json")
  .then(function(res){
 
    if($lang == "en"){  
